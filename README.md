@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+iSweetbriar
 
-Things you may want to cover:
+* Ruby version 2.3.0
 
-* Ruby version
+* System dependencies: rails 5.0.0, angular 1.5.0
 
-* System dependencies
+* Database creation: Use the migrations in db/migrate
 
-* Configuration
+Project Overview:
 
-* Database creation
+This is a ruby on rails project for viewing online course material and recording student progress through the material. To use this app, simply clone, run bundle install, rake db:migrate, and rails s from the terminal.
 
-* Database initialization
+Contributing
 
-* How to run the test suite
+Bug reports and pull requests are welcome on GitHub at https://github.com/WilliamJones62/i-sweetbriar.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
+License
 
-* Deployment instructions
-
-* ...
+The project is available as open source under the terms of the MIT License.
