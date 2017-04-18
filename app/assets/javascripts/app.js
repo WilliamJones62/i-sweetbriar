@@ -1,20 +1,14 @@
-(function () {
+(function() {
 
-  function config($stateProvider, lockProvider, $urlRouterProvider) {
+  'use strict';
 
-    $stateProvider
-      .state('home', {
-        url: '/home',
-        controller: 'HomeController',
-        templateUrl: 'components/home/home.html',
-        controllerAs: 'vm'
-      })
-      .state('login', {
-        url: '/login',
-        controller: 'LoginController',
-        templateUrl: 'components/login/login.html',
-        controllerAs: 'vm'
+  angular
+    .module('authApp', ['auth0', 'angular-storage', 'angular-jwt', 'ngMaterial', 'ui.router'])
+    .config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider) {
+
+      authProvider.init({
+        domain: 'williamjones.auth0.com',
+        clientID: 'LGDLT1jTyvtgBtyDbum7RAJ_QBWyU_nA'
       });
-  }
-
+    });
 })();
