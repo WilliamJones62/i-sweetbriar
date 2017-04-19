@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('authApp', ['auth0', 'angular-storage', 'angular-jwt', 'ngMaterial', 'ui.router'])
+    .module('app', ['auth0', 'angular-storage', 'angular-jwt', 'ngMaterial', 'ui.router'])
     .config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider) {
 
       authProvider.init({
