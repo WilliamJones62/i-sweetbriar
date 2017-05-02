@@ -1,2 +1,47 @@
 class UsersController < ApplicationController
+
+    before_action :set_user, only: [ :show, :update, :destroy ]
+
+    def create
+      @user = User.new(users_params)
+      if @user.save
+        render :json => @user
+      else
+        render json: { errors: "Error creating user, please try again."}
+      end
+    end
+
+    def show
+      if @user
+        render json: @user
+      else
+        render json: { errors: "This is not a user, please try again."}
+      end
+    end
+
+    def update
+      if @user.update(posts_params)
+        render nothing: true
+      else
+        render json: { errors: "Error updating user, please try again."}
+      end
+    end
+
+    def destroy
+      if @user.destroy
+        render nothing: true
+      else
+        render json: { errors: "Error deleting user, please try again"}
+      end
+    end
+
+    private
+      def set_user
+        @user = User.find(params[:token])
+      end
+
+      def users_params
+        params.require(:post).permit(:token, :lesson)
+      end
+
 end
