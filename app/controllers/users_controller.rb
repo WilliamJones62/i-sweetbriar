@@ -15,7 +15,8 @@ class UsersController < ApplicationController
       if @user
         render json: @user
       else
-        render json: { errors: "This is not a user, please try again."}
+        # this is a new user
+        redirect_to action: "create"
       end
     end
 
