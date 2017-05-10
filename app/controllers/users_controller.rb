@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
     def create
       @user = User.new(users_params)
+      @user.lesson = 0
       if @user.save
         render :json => @user
       else
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
       end
 
       def users_params
-        params.require(:post).permit(:token, :lesson)
+        params.require(:token).permit(:lesson)
       end
 
 end
